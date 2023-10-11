@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Simulator
+{% endblock %}
+
+{% block main %}
+<h1>DepSim: Health Insurance Coverage Simulator</h1>
+<h2>How much will health insurance coverage decrease the probability of depression?</h2>
+
+<body>
+    <form action="/" method="post">
+        <div class="mb-3">
+            <div class="range">
+            <label class="form-label" for="customRange2">Age:</label>
+                <output id="value"></output>
+                <input class="form-range" name="age" type="range" min="18" max="65" step="1" id="pi_input" value="{{ request.form["age"] }}">
+            </div>
+            <div>
+            <label class="form-label">Household size:</label>
+            <select name="hhsize" required>
+                <option value="">Select</option>
+                <option value="1" {% if (dict["hhsize"])|string=="[1.0]" %} selected {% endif %} >1</option>
+                <option value="2" {% if (dict["hhsize"])|string=="[2.0]" %} selected {% endif %} >2</option>
+                <option value="3" {% if (dict["hhsize"])|string=="[3.0]" %} selected {% endif %} >3</option>
+                <option value="4" {% if (dict["hhsize"])|string=="[4.0]" %} selected {% endif %} >4</option>
+                <option value="5" {% if (dict["hhsize"])|string=="[5.0]" %} selected {% endif %} >5</option>
+                <option value="6" {% if (dict["hhsize"])|string=="[6.0]" %} selected {% endif %} >6</option>
+                <option value="7" {% if (dict["hhsize"])|string=="[7.0]" %} selected {% endif %} >7</option>
+                <option value="8" {% if (dict["hhsize"])|string=="[8.0]" %} selected {% endif %} >8</option>
+                <option value="9" {% if (dict["hhsize"])|string=="[9.0]" %} selected {% endif %} >9</option>
+            </select>
+            </div>
+            <div>
+            <label class="form-label">Race and ethnicity:</label>
+            <select name="race" required>
+                <option value="">Select</option>
+                <option value="white" {% if (dict["white"])|string=="[1.0]" %} selected {% endif %} >Non-Hispanic White</option>
+                <option value="black" {% if (dict["black"])|string=="[1.0]" %} selected {% endif %} >Non-Hispanic Black</option>
+                <option value="hispanic" {% if (dict["hispanic"])|string=="[1.0]" %} selected {% endif %} >Hispanic</option>
+                <option value="other" {% if ((dict["white"])|string=="[0.0]") and ((dict["black"])|string=="[0.0]") and ((dict["hispanic"])|string=="[0.0]") %} selected {% endif %} >Other</option>
+            </select>
+            </div>
+            <div>
+            <label class="form-label">Education:</label>
+            <select name="edu" required>
+                <option value="">Select</option>
+                <option value="1" {% if (dict["edu"])|string=="[1.0]" %} selected {% endif %} >More than a high school diploma</option>
+                <option value="0" {% if (dict["edu"])|string=="[0.0]" %} selected {% endif %} >High school diploma or less</option>
+            </select>
+            </div>
+            <div>
+            <label class="form-label">Past medical history (select all that apply):</label>
+            <select name="pmh" multiple>
+                <option value="ast_dx_pre_lottery_inp" {% if (dict["ast_dx_pre_lottery_inp"])|string=="[1.0]" %} selected {% endif %} >Asthma</option>
+                <option value="dia_dx_pre_lottery_inp" {% if (dict["dia_dx_pre_lottery_inp"])|string=="[1.0]" %} selected {% endif %} >Diabetes</option>
+                <option value="hbp_dx_pre_lottery_inp" {% if (dict["hbp_dx_pre_lottery_inp"])|string=="[1.0]" %} selected {% endif %} >Hypertension</option>
+                <option value="chl_dx_pre_lottery_inp" {% if (dict["chl_dx_pre_lottery_inp"])|string=="[1.0]" %} selected {% endif %} >High cholesterol</option>
+                <option value="ami_dx_pre_lottery_inp" {% if (dict["ami_dx_pre_lottery_inp"])|string=="[1.0]" %} selected {% endif %} >Heart attack</option>
+                <option value="chf_dx_pre_lottery_inp" {% if (dict["chf_dx_pre_lottery_inp"])|string=="[1.0]" %} selected {% endif %} >Congestive heart failure</option>
+                <option value="emp_dx_pre_lottery_inp" {% if (dict["emp_dx_pre_lottery_inp"])|string=="[1.0]" %} selected {% endif %} >Empyema/chronic obstructive pulmonary disease (COPD)</option>
+                <option value="kid_dx_pre_lottery_inp" {% if (dict["kid_dx_pre_lottery_inp"])|string=="[1.0]" %} selected {% endif %} >Kidney failure</option>
+                <option value="cancer_dx_pre_lottery_inp" {% if (dict["cancer_dx_pre_lottery_inp"])|string=="[1.0]" %} selected {% endif %} >Cancer</option>
+                <option value="dep_dx_pre_lottery_inp" {% if (dict["dep_dx_pre_lottery_inp"])|string=="[1.0]" %} selected {% endif %} >Depression</option>
+            </select>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Predict</button>
+    </form>
+</body>
+{% endblock %}

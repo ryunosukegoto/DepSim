@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block main %}
+<h1>About DepSim</h1>
+<body>
+    <p>
+    DepSim is an interactive simulator that predicts how much health insurance coverage will decrease the probability of developing depression. Based on a soon-to-be-published study on the heterogeneous effects of Medicaid (a US public health insurance program for low-income adults) on depression (<i>American Journal of Epidemiology</i>, in press), DepSim will estimate the treatment effect of insurance coverage on depression using the causal forest model, developed by Wager and Athey (<a href="https://www.tandfonline.com/doi/abs/10.1080/01621459.2017.1319839?journalCode=uasa20"><i>Journal of the American Statistical Association</i>, 2018</a>). For more information on our study, please see the <a href="publication">publication</a> page or see <a href="https://ryunosukegoto.github.io/OHIEpaper.pdf">https://ryunosukegoto.github.io/OHIEpaper.pdf</a>.
+    </p>
+    <p>
+    The user can enter their demographic information as well as their past medical history, with which the model will estimate the effects of health insurance coverage on depression. Note that the external validity of the model has not been tested and the model may not necessarily be generalizable to individuals other than low-income adults in Oregon, where the original study (<a href="https://www.nejm.org/doi/full/10.1056/NEJMsa1212321">Baicker et al., <i>New England Journal of Medicine</i>, 2013</a>) was based.
+    </p>
+</body>
+{% endblock %}
