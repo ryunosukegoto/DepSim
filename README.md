@@ -7,7 +7,7 @@ The user can enter their demographic information as well as past medical history
 The app was created for demonstrative purposes, but illustrates how a healthcare provider might personalize treatment decisions based on an individual’s characteristics. The approach we took in this research article can be applied to any treatment, as long as data are available.
 
 ## Demo:
-Watch a three-minute demo of DepSim here: <https://youtu.be/OC0NJ1jkPeQ>
+Watch a three-minute demo of DepSim here: <a href="https://youtu.be/OC0NJ1jkPeQ">https://youtu.be/OC0NJ1jkPeQ</a>
 
 ## Run locally:
 After cloning to project with ```git clone```, go to the project directory and install the required Python packages by using the following ```pip``` command:
