@@ -1,13 +1,11 @@
 # DepSim: Health Insurance Coverage Simulator
 ## Description:
-DepSim is an interactive simulator that predicts how much a low-income individual is expected to benefit from insurance coverage. Based on <a href="https://academic.oup.com/aje/article/193/7/951/7612960" target="_blank">Machine learning for detection of heterogeneous effects of Medicaid coverage on depression</a> published in <i>American Journal of Epidemiology</i>, DepSim estimates the treatment effect of insurance coverage on depression using the generalized random forest, developed by Wager and Athey (<a href="https://www.tandfonline.com/doi/abs/10.1080/01621459.2017.1319839?journalCode=uasa20"><i>Journal of the American Statistical Association</i>, 2018</a>). For more information on our study, please see [study details](#study-details) below, the <a href="templates/publication.html">publication</a> page in the app, or https://ryunosukegoto.github.io/OHIEpaper.pdf.
+DepSim is an interactive simulator that predicts how much a low-income individual is expected to benefit from insurance coverage. Based on <a href="https://academic.oup.com/aje/article/193/7/951/7612960" target="_blank">Machine learning for detection of heterogeneous effects of Medicaid coverage on depression</a> published in <i>American Journal of Epidemiology</i>, DepSim estimates the treatment effect of insurance coverage on depression using the generalized random forest, developed by Wager and Athey (<a href="https://www.tandfonline.com/doi/abs/10.1080/01621459.2017.1319839?journalCode=uasa20"><i>Journal of the American Statistical Association</i>, 2018</a>). For more information on our study, please see [study details](#study-details) below or refer to the <a href="https://academic.oup.com/aje/article/193/7/951/7612960" target="_blank">original publication</a>.
 
 The user can enter their demographic information as well as past medical history, with which the model will estimate the effects of health insurance coverage on depression. Note that the external validity of the model has not been tested and the model may not necessarily be generalizable to individuals other than low-income adults in Oregon, where the original study (<a href="https://www.nejm.org/doi/full/10.1056/NEJMsa1212321">Baicker et al., <i>New England Journal of Medicine</i>, 2013</a>) was based.
 
 The app was created for demonstrative purposes, but illustrates how a healthcare provider might personalize treatment decisions based on an individual’s characteristics. The approach we took in this research article can be applied to any treatment, as long as data are available.
 
-## Demo:
-Watch a three-minute demo of DepSim here: <a href="https://youtu.be/OC0NJ1jkPeQ">https://youtu.be/OC0NJ1jkPeQ</a>
 
 ## Run locally:
 After cloning to project with ```git clone```, go to the project directory and install the required Python packages by using the following ```pip``` command:
